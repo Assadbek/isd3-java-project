@@ -2,7 +2,6 @@ package com.example.findtutor.register;
 
 import com.example.findtutor.model.Publication;
 import com.example.findtutor.model.Tutor;
-import com.example.findtutor.model.User;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -14,12 +13,11 @@ public class TutorsRegister {
 
     public TutorsRegister() {
         for (int i = 0; i < 10; i++) {
-            User user = new User(i, "Tutor" + i, "Tutor" + i);
-            List<Publication> publicationList = List.of(
+            List<Publication> publications = List.of(
                     new Publication(i, "Publication" + 1),
                     new Publication(i, "Publication" + 2)
             );
-            tutors.add(new Tutor(i, user.getId(), publicationList));
+            tutors.add(new Tutor(i, "TutorName" + i, "TutorSurname" + i, publications));
         }
     }
 
@@ -29,5 +27,9 @@ public class TutorsRegister {
 
     public List<Tutor> getTutors() {
         return tutors;
+    }
+
+    public Tutor getTutor(int tutorId) {
+        return tutors.get(tutorId);
     }
 }

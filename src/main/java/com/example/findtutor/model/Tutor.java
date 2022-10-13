@@ -11,6 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 public class Tutor {
     private int id;
-    private int userId;
+    private String name;
+    private String surname;
     private List<Publication> publications;
 }
