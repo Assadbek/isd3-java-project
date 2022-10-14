@@ -11,7 +11,7 @@
 </div>
 <hr>
 <div th:each="publication : ${tutor.publications}">
-    <p th:text="publication.title"></p>
+    <p th:text="${publication.title}"></p>
 </div>
 </body>
 </html>
