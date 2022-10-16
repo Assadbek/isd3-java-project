@@ -5,33 +5,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
+import javax.persistence.Table;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "tutor")
-public class Tutor {
+@Table(name = "subject")
+public class Subject {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Long id;
 
     private String name;
 
-    private String surname;
-
-    private int age;
-
-    private Gender gender;
-
-    @Column(name = "about_me")
-    private String aboutMe;
-
     private String experience;
-
-    @Column(name = "price_hour")
-    private int priceHour;
-
 }
