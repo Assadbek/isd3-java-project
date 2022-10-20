@@ -3,7 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link th:href="@{/styles/create-tutor.css}"/>
+    <script type="text/javascript" th:src="@{/js/create-tutor.js}"></script>
+    <style>
+        .container {
+            padding: 0 20px;
+        }
+
+        input {
+            padding: 10px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 300px;
+        }
+
+        .gender-radio {
+            display: flex;
+            flex-direction: row;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
@@ -12,6 +33,11 @@
         <input type="text" name="name" id="name">
         <label for="surname">Surname: </label>
         <input type="text" name="surname" id="surname">
+
+        <label for="subject">Subject: </label>
+        <select id="subject" name="subject">
+            <option th:each="subject : ${defSubjects}" th:value="${subject.id}" th:text="${subject.name}"></option>
+        </select>
 
         <input type="submit" value="Create tutor">
     </form>
