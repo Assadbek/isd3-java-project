@@ -1,12 +1,12 @@
 package com.example.findtutor.model;
 
+import com.example.findtutor.model.user.MyUser;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -18,15 +18,10 @@ public class Tutor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Long id;
 
-    private String name;
-
-    private String surname;
-
-    private int age;
-
-    private Gender gender;
+    @OneToOne
+    private MyUser user;
 
     @Column(name = "about_me")
     private String aboutMe;
