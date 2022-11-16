@@ -36,7 +36,6 @@ public class Config {
                     Tutor.builder()
                             .user(b)
                             .experience("15 years")
-                            .priceHour(20)
                             .aboutMe("I like books").build()
             );
 
@@ -44,7 +43,6 @@ public class Config {
                     Tutor.builder()
                             .user(a)
                             .experience("3 years")
-                            .priceHour(10)
                             .aboutMe("I like play basketball").build()
             );
         };

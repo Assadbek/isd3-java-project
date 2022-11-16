@@ -1,33 +1,36 @@
 package com.example.findtutor.model;
 
-import com.example.findtutor.model.user.MyUser;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Date;
+
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "tutor")
-public class Tutor {
+@Table(name = "review")
+public class Review {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToOne
-    private MyUser user;
+    @Column(name = "stars_count")
+    private int starsCount;
 
-    @Column(name = "about_me")
-    private String aboutMe;
+    @Column(name = "published_date")
+    private Date publishedDate;
 
-    private String education;
+    @ManyToOne
+    private TutorAmenities service;
 
-    private String experience;
+    @ManyToOne
+    private Student student;
 
 }

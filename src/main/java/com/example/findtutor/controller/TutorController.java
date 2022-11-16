@@ -1,7 +1,7 @@
 package com.example.findtutor.controller;
 
 import com.example.findtutor.model.Tutor;
-import com.example.findtutor.service.impl.TutorService;
+import com.example.findtutor.service.impl.TutorServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -12,21 +12,21 @@ import java.util.List;
 @RequestMapping("tutors")
 public class TutorController {
 
-    private final TutorService tutorsService;
+    private final TutorServiceImpl tutorsService;
 
     @Autowired
-    public TutorController(TutorService tutorsRegister) {
+    public TutorController(TutorServiceImpl tutorsRegister) {
         this.tutorsService = tutorsRegister;
     }
 
     @GetMapping()
     public List<Tutor> getTutors() {
-        return tutorsService.getTutors();
+        return tutorsService.loadTutors();
     }
 
     @GetMapping("/{id}")
     public Tutor show(@PathVariable("id") Long id) {
-        return tutorsService.getTutor(id);
+        return tutorsService.loadTutor(id);
     }
 
     @GetMapping("/create-tutor")
@@ -36,7 +36,7 @@ public class TutorController {
 
     @GetMapping("/{id}/edit")
     public String editTutor(@PathVariable("id") Long id, Model model) {
-        model.addAttribute("tutor", tutorsService.getTutor(id));
+        model.addAttribute("tutor", tutorsService.loadTutor(id));
         return "edit-tutor";
     }
 

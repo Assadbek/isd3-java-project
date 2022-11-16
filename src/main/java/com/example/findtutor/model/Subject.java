@@ -1,6 +1,5 @@
 package com.example.findtutor.model;
 
-import com.example.findtutor.model.user.MyUser;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,21 +12,13 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "tutor")
-public class Tutor {
+@Table(name = "subject")
+public class Subject {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToOne
-    private MyUser user;
-
-    @Column(name = "about_me")
-    private String aboutMe;
-
-    private String education;
-
-    private String experience;
+    private String name;
 
 }

@@ -1,14 +1,17 @@
 package com.example.findtutor.service;
 
 import com.example.findtutor.model.Tutor;
+import com.example.findtutor.model.dto.TutorDetails;
 
 import java.util.List;
 
 public interface TutorService {
 
-    List<Tutor> getTutors();
+    List<Tutor> loadTutors();
 
-    Tutor getTutor(Long tutorId);
+    Tutor loadTutor(Long tutorId);
+
+    TutorDetails loadTutorDetails(Long tutorId);
 
     void saveTutor(Tutor tutor);
 

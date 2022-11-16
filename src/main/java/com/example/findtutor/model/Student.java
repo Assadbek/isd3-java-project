@@ -13,8 +13,8 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "tutor")
-public class Tutor {
+@Table(name = "student")
+public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,12 +22,5 @@ public class Tutor {
 
     @OneToOne
     private MyUser user;
-
-    @Column(name = "about_me")
-    private String aboutMe;
-
-    private String education;
-
-    private String experience;
 
 }
