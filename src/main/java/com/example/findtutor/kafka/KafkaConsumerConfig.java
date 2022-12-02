@@ -17,7 +17,7 @@ import java.util.Map;
 
 @Configuration
 public class KafkaConsumerConfig {
-
+/*
     @Value("${spring.kafka.bootstrap-servers}")
     private String kafkaServer;
 
@@ -45,5 +45,5 @@ public class KafkaConsumerConfig {
     @Bean
     public ConsumerFactory<Long, Tutor> consumerFactory() {
         return new DefaultKafkaConsumerFactory<>(consumerConfigs());
-    }
+    }*/
 }

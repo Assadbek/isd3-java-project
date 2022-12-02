@@ -13,9 +13,11 @@ import java.util.List;
 @RestController
 @RequestMapping("tutors")
 public class TutorController {
+/*
 
     @Autowired
     private KafkaTemplate<Long, Tutor> kafkaTemplate;
+*/
 
     private final TutorServiceImpl tutorsService;
 
@@ -38,10 +40,12 @@ public class TutorController {
     public void createTutor(@RequestBody Tutor tutor) {
         // save tutor
         System.out.println(tutor);
+/*
 
         ListenableFuture<SendResult<Long, Tutor>> future = kafkaTemplate.send("newTutor", 1L, tutor);
         future.addCallback(System.out::println, System.err::println);
         kafkaTemplate.flush();
+*/
     }
 
 }

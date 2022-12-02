@@ -7,9 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.kafka.annotation.EnableKafka;
 import org.springframework.kafka.annotation.KafkaListener;
 
-@EnableKafka
+//@EnableKafka
 @SpringBootApplication
 public class FindTutorApplication {
+/*
 
     @KafkaListener(topics="newTutor")
     public void orderListener(ConsumerRecord<Long, Tutor> record){
@@ -17,6 +18,7 @@ public class FindTutorApplication {
         System.out.println(record.key());
         System.out.println(record.value());
     }
+*/
 
     public static void main(String[] args) {
         SpringApplication.run(FindTutorApplication.class, args);

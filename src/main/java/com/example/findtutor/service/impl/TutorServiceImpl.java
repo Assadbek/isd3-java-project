@@ -6,7 +6,6 @@ import com.example.findtutor.model.dto.TutorDetails;
 import com.example.findtutor.repository.TutorRepo;
 import com.example.findtutor.service.TutorAmenitiesService;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

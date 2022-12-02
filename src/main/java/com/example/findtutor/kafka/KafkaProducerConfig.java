@@ -15,6 +15,7 @@ import java.util.Map;
 
 @Configuration
 public class KafkaProducerConfig {
+/*
 
     private String kafkaServer="localhost:9092";
 
@@ -39,4 +40,5 @@ public class KafkaProducerConfig {
     public KafkaTemplate<Long, Tutor> kafkaTemplate() {
         return new KafkaTemplate<>(producerFactory());
     }
+*/
 }
